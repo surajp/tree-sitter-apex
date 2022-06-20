@@ -973,6 +973,7 @@ module.exports = grammar({
 
     field_declaration: ($) =>
       seq(
+        optional($._annotation),
         optional($.modifiers),
         field("type", $._unannotated_type),
         $._variable_declarator_list,
@@ -981,6 +982,7 @@ module.exports = grammar({
 
     property_declaration: ($) =>
       seq(
+        optional($._annotation),
         optional($.modifiers),
         field("type", $._unannotated_type),
         $._variable_declarator_list,
